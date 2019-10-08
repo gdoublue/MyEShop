@@ -5,6 +5,8 @@ namespace  app\home\controller;
 use think\Controller;
 use Request,Db,Config,Session;
 use app\home\validate\RegisterValidate;
+use app\home\logic\Ucpaas;
+
 
 class Register extends Controller
 {
@@ -21,10 +23,17 @@ class Register extends Controller
             if ($regvalidate->check($data)) {
                 $username = $data["username"];
                 $password = $data["password"];
+                if(Session::has('phone')){
+                    $phonenumber=Session::pull("phone");
+                }
+                else{
+                    $this->error("请重新获取验证码","/");
+                }
                 //构建添加的数据
                 $data = [
                     "username" => $username,
                     "password"  =>  md5(Config::get("cus.secure_salt").$password),
+                   "phonenumber"=> $phonenumber,
                 ];
                 //将用户数据写入数据库
                 $userId =  Db::name("member")->insertGetId($data);
@@ -58,4 +67,43 @@ class Register extends Controller
             return json(["code"=>0]);
         }
     }
+
+    //发送手机验证码
+    public function smsyzm()
+    {
+           $phone = Request::param("phone");
+
+
+            $options['accountsid']='d5bcb68d6fba35e0232927d20ab78660';
+            $options['token']='9ff778bb56fc2eafc193d49aba3343fb';
+            $ucpaas = new Ucpaas($options);
+            $appid = "243e663b623e44e698583601b05c6638";	//应用的ID，可在开发者控制台内的短信产品下查看
+            $templateid = "503193";    //可在后台短信产品→选择接入的应用→短信模板-模板ID，查看该模板ID
+            $yzmcode=mt_rand(1001,9899);
+            $param = "$yzmcode,300"; //多个参数使用英文逗号隔开（如：param=“a,b,c”），如为参数则留空
+            $mobile = $phone;
+            $uid = "007";
+            Session::set("phone",$phone);
+            Session::set("yzmcode",$yzmcode);
+           $res= $ucpaas->SendSms($appid,$templateid,$param,$mobile,$uid);
+           if($res){
+               return json(["smsready"=>1,"num"=>$phone]);
+           }else
+           {
+               return json(["smsready"=>0,"num"=>"***"]);
+           }
+
+    }
+    //校验验证码
+    public function  smsverify()
+    {
+       $smscode = Request::param("smscode");
+       $getsmscode=Session::get("yzmcode");
+      if( $smscode == $getsmscode){
+          return json(["code"=>1]);
+      } else {
+          return json(["code"=>0]);
+      }
+    }
+
 }

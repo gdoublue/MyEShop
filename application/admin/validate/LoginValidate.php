@@ -17,7 +17,7 @@ class LoginValidate extends Validate
     //验证提示信息
     protected $message = [
         "username.require" => "用户名不能为空",
-        "password.require" => "密码不能为空",
+        "password.require" => "您的密码不能为空",
     ];
 
     //定义验证码的验证规则

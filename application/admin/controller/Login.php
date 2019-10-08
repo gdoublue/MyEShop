@@ -4,7 +4,7 @@ namespace app\admin\controller;
 
 use think\Controller;
 use think\captcha\Captcha;
-use Request;
+use Request,Session;
 use app\admin\validate\LoginValidate;
 use app\admin\logic\LoginLogic;
 
@@ -36,7 +36,11 @@ class Login extends Controller
         }
         return $this->fetch();
     }
-
+    public function logout()
+    {
+        Session::delete("id");
+        Session::delete("user_name");
+    }
     //实现验证码
     public function verify()
     {

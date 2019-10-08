@@ -8,7 +8,7 @@
 		<title>{$goodsInfo.goods_name.$goodsInfo.introduction}- 六星开源商城&nbsp;-&nbsp;六星教育</title>
 		<meta name="keywords" content="六星教育" />
 		<meta name="description" content="六星教育" />
-		<link rel="shortcut  icon" type="image/x-icon" href="/template/shop/blue/public/images/favicon.ico" media="screen" />
+		<link rel="shortcut  icon" type="image/x-icon" href="/static/images/favicon.ico" media="screen" />
 		<!--可共用-->
 		<link type="text/css" rel="stylesheet" href="../../static/css/ns_common_8.css">
 		<link type="text/css" rel="stylesheet" href="../../static/css/ns_color_style_8.css">
@@ -17,10 +17,10 @@
 		<link rel="stylesheet" href="../../static/css/layer_8.css" id="layuicss-skinlayercss">
 		<script type="text/javascript" src="../../static/js/jquery_8.js"></script>
 		<script type="text/javascript">
-			var shop_main = 'http://jayhui.cn'; //外置JS调用
-			var app_main = 'http://jayhui.cn/wap'; //外置JS调用
+			var shop_main = 'http://tp.23673.com'; //外置JS调用
+			var app_main = 'http://tp.23673.com/wap'; //外置JS调用
 			var upload = ""; //外置JS调用
-			var ADMINMAIN = 'http://jayhui.cn/admin';
+			var ADMINMAIN = 'http://tp.23673.com/admin';
 			var TEMP_IMG = "/template/shop/blue/public/images";
 			var temp = "/template/"; //外置JS调用
 			$(function() {
@@ -28,9 +28,9 @@
 				$('#nav li>a').removeClass('current');
 				var path_info = 'goods/goodsinfo';
 				if (path_info == '') {
-					$("#nav li>a[href^='http://jayhui.cn/index/index']").addClass('current');
+					$("#nav li>a[href^='http://tp.23673.com/index/index']").addClass('current');
 				} else {
-					$("#nav li>a[href^='http://jayhui.cn/goods/goodsinfo']").addClass('current');
+					$("#nav li>a[href^='http://tp.23673.com/goods/goodsinfo']").addClass('current');
 				}
 			})
 
@@ -64,7 +64,7 @@
 			 */
 			var PLATFORM_NAME = "";
 			var ADMINIMG = "/public/admin/images"; //后台图片请求路径
-			var ADMINMAIN = "http://jayhui.cn/admin"; //后台请求路径
+			var ADMINMAIN = "http://tp.23673.com/admin"; //后台请求路径
 			var UPLOAD = ""; //上传文件根目录
 			var PAGESIZE = ""; //分页显示页数
 			var ROOT = ""; //跟目录
@@ -115,22 +115,22 @@
 			<div class="header-box">
 				<font id="login-info" class="login-info"></font>
 				<ul>
-					<li><a class="menu-hd home" href="http://jayhui.cn" target="_top"><i></i>商城首页</a></li>
+					<li><a class="menu-hd home" href="http://tp.23673.com" target="_top"><i></i>商城首页</a></li>
 					<li class="menu-item">
 						<div class="menu">
-							<a class="menu-hd myinfo" href="http://jayhui.cn/member/index" target="_blank"><i></i> 个人中心 <b></b></a>
+							<a class="menu-hd myinfo" href="http://tp.23673.com/member/index" target="_blank"><i></i> 个人中心 <b></b></a>
 							<div id="menu-2" class="menu-bd">
 								<span class="menu-bd-mask"></span>
 								<div class="menu-bd-panel">
-									<a href="http://jayhui.cn/member/orderlist" target="_blank">已买到的宝贝</a>
-									<a href="http://jayhui.cn/member/addresslist" target="_blank">我的地址管理</a>
-									<a href="http://jayhui.cn/member/goodscollectionlist" target="_blank">我收藏的宝贝</a>
+									<a href="http://tp.23673.com/member/orderlist" target="_blank">已买到的宝贝</a>
+									<a href="http://tp.23673.com/member/addresslist" target="_blank">我的地址管理</a>
+									<a href="http://tp.23673.com/member/goodscollectionlist" target="_blank">我收藏的宝贝</a>
 								</div>
 							</div>
 						</div>
 					</li>
-					<li class="menu-item cartbox"><a class="menu-hd cart" href="http://www.jayhui.cn/home/cartlist" target="_top"><i></i>&nbsp;购物车</a></li>
-					<li><a class="menu-hd" target="_blank" href="http://jayhui.cn/admin">卖家中心</a></li>
+					<li class="menu-item cartbox"><a class="menu-hd cart" href="http://www.jayhui.cn/home/cart/cartlist" target="_top"><i></i>&nbsp;购物车</a></li>
+					<li><a class="menu-hd" target="_blank" href="http://tp.23673.com/admin">卖家中心</a></li>
 					<li class="menu-item">
 						<div class="menu">
 							<a class="menu-hd we-chat" href="javascript:;" target="_top"> <i></i>
@@ -144,22 +144,22 @@
 					</li>
 					<!-- 			<li class="menu-item"> -->
 					<!-- 				<div class="menu"> -->
-					<!-- 					<a href="http://jayhui.cn/helpcenter/index" class="menu-hd site-nav" target="_blank"> 商家支持 <b></b></a> -->
+					<!-- 					<a href="http://tp.23673.com/helpcenter/index" class="menu-hd site-nav" target="_blank"> 商家支持 <b></b></a> -->
 					<!-- 					<div id="menu-7" class="menu-bd site-nav-main"> -->
 					<!-- 						<span class="menu-bd-mask"></span> -->
 					<!-- 						<div class="menu-bd-panel"> -->
 					<!-- 							<div class="site-nav-con"> -->
-					<!-- 								<a href="http://jayhui.cn/helpcenter/index?id=2" target="_blank" title="常见问题">常见问题</a> -->
-					<!-- 								<a href="http://jayhui.cn/helpcenter/index?id=7" target="_blank" title="网上支付">网上支付</a> -->
-					<!-- 								<a href="http://jayhui.cn/helpcenter/index?id=5" target="_blank" title="验货与签收">验货与签收</a> -->
-					<!-- 								<a href="http://jayhui.cn/helpcenter/index?id=9" target="_blank" title="退款说明">退款说明</a> -->
+					<!-- 								<a href="http://tp.23673.com/helpcenter/index?id=2" target="_blank" title="常见问题">常见问题</a> -->
+					<!-- 								<a href="http://tp.23673.com/helpcenter/index?id=7" target="_blank" title="网上支付">网上支付</a> -->
+					<!-- 								<a href="http://tp.23673.com/helpcenter/index?id=5" target="_blank" title="验货与签收">验货与签收</a> -->
+					<!-- 								<a href="http://tp.23673.com/helpcenter/index?id=9" target="_blank" title="退款说明">退款说明</a> -->
 					<!-- 							</div> -->
 					<!-- 						</div> -->
 					<!-- 					</div> -->
 					<!-- 				</div> -->
 					<!-- 			</li> -->
-					<li class="menu-item"><a href="http://jayhui.cn/wap/" class="menu-hd wap-nav"> <i></i>手机端</a></li>
-					<li class="menu-item"><a href="http://jayhui.cn/helpcenter/index" class="menu-hd site-nav" target="_blank">帮助中心</a></li>
+					<li class="menu-item"><a href="http://tp.23673.com/wap/" class="menu-hd wap-nav"> <i></i>手机端</a></li>
+					<li class="menu-item"><a href="http://tp.23673.com/helpcenter/index" class="menu-hd site-nav" target="_blank">帮助中心</a></li>
 				</ul>
 			</div>
 		</div>
@@ -167,12 +167,12 @@
 		<script type="text/javascript">
 			$.ajax({
 				type: "post",
-				url: "http://jayhui.cn/components/getlogininfo",
+				url: "http://tp.23673.com/components/getlogininfo",
 				success: function(data) {
 					var login_info_html = '';
 					if (data != null && data != "") {
 						// 			if(data["user_info"]["nick_name"]!= null && data["user_info"]["nick_name"] != ""){
-						login_info_html = '<a class="sn-login color" href="http://jayhui.cn/member/index" target="_top">' + data[
+						login_info_html = '<a class="sn-login color" href="http://tp.23673.com/member/index" target="_top">' + data[
 								"user_info"]["nick_name"] +
 							'</a><em>欢迎您回来！</em><a class="sn-register" href="javascript:logout();" target="_top">退出</a>';
 						$('div.login-info').html(
@@ -181,9 +181,9 @@
 						// 			}
 					} else {
 						login_info_html =
-							'<em>欢迎来到六星开源商城</em><a class="login color" href="http://jayhui.cn/login/index" target="_top">请登录</a><a class="register" href="http://jayhui.cn/login/registerbox" target="_top">免费注册</a>';
+							'<em>欢迎来到六星开源商城</em><a class="login color" href="http://tp.23673.com/login/index" target="_top">请登录</a><a class="register" href="http://tp.23673.com/login/registerbox" target="_top">免费注册</a>';
 						$('div.login-info').html(
-							'<font id="login-info" class="login-info"><a class="login color" href="http://jayhui.cn/login/index" target="_top">登录</a><a class="register bg-color" href="http://jayhui.cn/login/registerbox" target="_top">免费注册</a></font>'
+							'<font id="login-info" class="login-info"><a class="login color" href="http://tp.23673.com/login/index" target="_top">登录</a><a class="register bg-color" href="http://tp.23673.com/login/registerbox" target="_top">免费注册</a></font>'
 						);
 					}
 					$('#login-info').html(login_info_html);
@@ -193,11 +193,11 @@
 			//退出登录
 			function logout() {
 				$.ajax({
-					url: "http://jayhui.cn/member/logout",
+					url: "http://tp.23673.com/member/logout",
 					type: "post",
 					success: function(res) {
 						if (res['code'] > 0) {
-							// 				location.href='http://jayhui.cn';
+							// 				location.href='http://tp.23673.com';
 							$.msg("退出成功！");
 							window.location.reload();
 						} else {
@@ -228,7 +228,7 @@
 					var arrSear = JSON.parse(strSear);
 					sear_html += '<a href="javascript:clearSearRecord();" class="clear-history"> <i></i>清空</a><br/>';
 					for (var i = 0; i < arrSear.length; i++) {
-						sear_html += '<a href="http://jayhui.cn/goods/goodslist?keyword=' + arrSear[i] +
+						sear_html += '<a href="http://tp.23673.com/goods/goodslist?keyword=' + arrSear[i] +
 							'" style="display:inline-block;">' + arrSear[i] + '</a>';
 					}
 				}
@@ -248,7 +248,7 @@
 		<div class="as-shelter"></div>
 		<div class="follow-box">
 			<div class="follow-box-con">
-				<a href="http://jayhui.cn" class="logo"><img src="../../static/picture/1497923663_8.jpg" /></a>
+				<a href="http://tp.23673.com" class="logo"><img src="../../static/picture/1497923663_8.jpg" /></a>
 				<div class="search NS-SEARCH-BOX-TOP">
 					<form class="search-form NS-SEARCH-BOX-FORM" method="get" onsubmit="return false">
 						<div class="search-info">
@@ -276,7 +276,7 @@
 		<div class="header">
 			<div class="w1210">
 				<div class="logo-info">
-					<a href="http://jayhui.cn" class="logo"> <img src="../../static/picture/1497923663_8.jpg" /></a>
+					<a href="http://tp.23673.com" class="logo"> <img src="../../static/picture/1497923663_8.jpg" /></a>
 				</div>
 				<div class="search NS-SEARCH-BOX">
 					<form class="search-form NS-SEARCH-BOX-FORM" method="get" onsubmit="return false">
@@ -305,7 +305,7 @@
 							</ul>
 							<ul class="rec-results">
 								<li class="title"><span>正在热搜中</span> <i class="close"></i></li>
-								<li><a href="http://jayhui.cn/goods/goodslist?keyword=衣服，鞋子" title="衣服，鞋子">衣服，鞋子</a></li>
+								<li><a href="http://tp.23673.com/goods/goodslist?keyword=衣服，鞋子" title="衣服，鞋子">衣服，鞋子</a></li>
 							</ul>
 						</div>
 					</form>
@@ -316,8 +316,8 @@
 				</div>
 				<!-- 搜索框右侧小广告 _start -->
 				<div class="header-right">
-					<a href="http://www.jayhui.cn/home/cartlist" class="my-cart"><span class="ico"></span>购物车结算<span class="right_border"></span></a>
-					<a href="http://jayhui.cn/member" class="my-mall"><span class="ico"></span>我的商城<span class="right_border"></span></a>
+					<a href="http://www.jayhui.cn/home/cart/cartlist" class="my-cart"><span class="ico"></span>购物车结算<span class="right_border"></span></a>
+					<a href="http://tp.23673.com/member" class="my-mall"><span class="ico"></span>我的商城<span class="right_border"></span></a>
 				</div>
 				<!-- 搜索框右侧小广告 _end -->
 			</div>
@@ -413,9 +413,9 @@
 					$.cookie("searchRecord", JSON.stringify(arr));
 
 					if ($(".search-li.curr").attr('num') == 0) {
-						window.location.href = 'http://jayhui.cn/goods/goodslist?keyword=' + keywords;
+						window.location.href = 'http://tp.23673.com/goods/goodslist?keyword=' + keywords;
 					} else {
-						window.location.href = 'http://jayhui.cn/shop/shopstreet?shopname=' + keywords;
+						window.location.href = 'http://tp.23673.com/shop/shopstreet?shopname=' + keywords;
 					}
 				});
 			});
@@ -445,9 +445,9 @@
 
 					$(keyword_obj).val(keywords);
 					if ($(".search-li-top.curr").attr('num') == 0) {
-						window.location.href = 'http://jayhui.cn/goods/goodslist?keyword=' + keywords;
+						window.location.href = 'http://tp.23673.com/goods/goodslist?keyword=' + keywords;
 					} else {
-						window.location.href = 'http://jayhui.cn/shop/shopstreet?shopname=' + keywords;
+						window.location.href = 'http://tp.23673.com/shop/shopstreet?shopname=' + keywords;
 					}
 				});
 			});
@@ -464,7 +464,7 @@
 		<div class="category-box category-box-border">
 			<div class="w1210">
 				<div class="home-category fl">
-					<a href="http://jayhui.cn/goods/category" class="menu-event" title="查看全部商品分类"><i></i>全部商品分类</a>
+					<a href="http://tp.23673.com/goods/category" class="menu-event" title="查看全部商品分类"><i></i>全部商品分类</a>
 					<div class="expand-menu category-layer" style="display: none;">
 						<!-- 公共的菜单栏-->
 						<div class="category-layer">
@@ -474,7 +474,7 @@
 							<div class="list">
 								<dl class="cat">
 									<dt class="cat-name">
-										<a href="http://jayhui.cn/goods/goodslist?category_id=311" target="_blank" title="{$category.category_name}">{$category.category_name}</a>
+										<a href="http://tp.23673.com/goods/goodslist?category_id=311" target="_blank" title="{$category.category_name}">{$category.category_name}</a>
 									</dt>
 									<i class="right-arrow"></i>
 								</dl>
@@ -484,14 +484,14 @@
 											{foreach $category.child as $child}
 											<dl class="fore1">
 												<dt style="width: 5em;">
-													<a href="http://jayhui.cn/goods/goodslist?category_id=313" target="_blank" title="{$child.category_name}">
+													<a href="http://tp.23673.com/goods/goodslist?category_id=313" target="_blank" title="{$child.category_name}">
 														<em>{$child.category_name}</em>
 														<i></i>
 													</a>
 												</dt>
 												<dd>
-													<!--<a href="http://jayhui.cn/goods/goodslist?category_id=320" target="_blank" title="蕾丝短袖">蕾丝短袖</a>-->
-													<!--<a href="http://jayhui.cn/goods/goodslist?category_id=322" target="_blank" title="针织短袖">针织短袖</a>-->
+													<!--<a href="http://tp.23673.com/goods/goodslist?category_id=320" target="_blank" title="蕾丝短袖">蕾丝短袖</a>-->
+													<!--<a href="http://tp.23673.com/goods/goodslist?category_id=322" target="_blank" title="针织短袖">针织短袖</a>-->
 												</dd>
 											</dl>
 											{/foreach}
@@ -537,7 +537,7 @@ $(function() {
 	$(".quick-links").css("top",($(window).height())/2);
 	$.ajax({
 		type:"post",
-		url:"http://jayhui.cn/components/getlogininfo",
+		url:"http://tp.23673.com/components/getlogininfo",
 		success:function(data){
 			if(data != null && data != ""){
 				var img = data["user_info"]["user_headimg"];
@@ -581,14 +581,14 @@ $(function() {
 									<div class="sidebar-user-info">
 										<!-- 没有登录的情况 _start -->
 										<div class="NS-USER-NOT-LOGIN">
-											<a href="http://jayhui.cn/member/index">
+											<a href="http://tp.23673.com/member/index">
 												<div class="user-pic">
 													<div class="user-pic-mask"></div>
 													<img id="login_member_logo" src="../../static/picture/temp_default_user_portrait_0_8.png" />
 												</div>
 											</a>
 											<br>
-											<p id="not_logged">你好！请<a href="javascript:void(0);" class="quick-login-a color ajax-login">登录</a> | <a href="http://jayhui.cn/login/registerbox"
+											<p id="not_logged">你好！请<a href="javascript:void(0);" class="quick-login-a color ajax-login">登录</a> | <a href="http://tp.23673.com/login/registerbox"
 												 class="color">注册</a></p>
 											<p id="right_login_info">你好！<span id="right_login_info_name"></span></p>
 										</div>
@@ -610,8 +610,8 @@ $(function() {
 												<span class="prev-login"> 上次登录时间：
 													<span class="NS-USER-LAST-LOGIN"></span>
 												</span>
-												<a href="http://jayhui.cn/member/index" class="btn account-btn" target="_blank">个人中心</a>
-												<a href="http://jayhui.cn/member/orderlist" class="btn order-btn" target="_blank">订单中心</a>
+												<a href="http://tp.23673.com/member/index" class="btn account-btn" target="_blank">个人中心</a>
+												<a href="http://tp.23673.com/member/orderlist" class="btn order-btn" target="_blank">订单中心</a>
 											</p>
 										</div>
 										<!-- 有登录的情况 _end -->
@@ -666,11 +666,11 @@ $(function() {
 
 		<div class="w1210">
 			<div class="breadcrumb clearfix">
-				<a href="http://jayhui.cn" class="index">首页</a>
+				<a href="http://tp.23673.com" class="index">首页</a>
 				<span class="last" style="cursor: pointer;">
-					&nbsp;&gt;&nbsp;<a href="http://jayhui.cn/goods/goodslist?category_id=312">{$goodsInfo.category_name}</a>
+					&nbsp;&gt;&nbsp;<a href="http://tp.23673.com/goods/goodslist?category_id=312">{$goodsInfo.category_name}</a>
 					<span class="crumbs-arrow">&gt;</span>
-					<a href="http://jayhui.cn/goods/goodsinfo?goodsid=383">{$goodsInfo.goods_name}</a>
+					<a href="http://tp.23673.com/goods/goodsinfo?goodsid=383">{$goodsInfo.goods_name}</a>
 				</span>
 			</div>
 			<!-- 商品详细信息 -->
@@ -823,7 +823,7 @@ $(function() {
 								</div>
 								<div class="btn-buy"><a href="javascript:void(0);" class="add-cart bg-color" data-tag="to_cart"><i></i> 加入购物车</a></div>
 								<div class="btn-phone">
-									<!-- http://jayhui.cn/wap/Goods/goodsDetail?id=383 -->
+									<!-- http://tp.23673.com/wap/Goods/goodsDetail?id=383 -->
 									<a href="javascript:;" class="go-phone">
 										<!-- 								<span>手机购买</span> -->
 										<i></i>
@@ -850,12 +850,12 @@ $(function() {
 				<!-- 店铺信息 _star    提出来的    【店铺信息】 -->
 				<div class="store-info">
 					<dl class="store-logo">
-						<a href="http://jayhui.cn/shop/shopindex?shop_id=41" target="_blank">
+						<a href="http://tp.23673.com/shop/shopindex?shop_id=41" target="_blank">
 							<img src="../../static/picture/1500623521.jpg" width="" height="">
 						</a>
 					</dl>
 					<dl class="store-name third-store">
-						<a href="http://jayhui.cn/shop/shopindex?shop_id=41" target="_blank" class="name" title="太原乔丹技有限公司">乔丹旗舰店</a>
+						<a href="http://tp.23673.com/shop/shopindex?shop_id=41" target="_blank" class="name" title="太原乔丹技有限公司">乔丹旗舰店</a>
 						<input type="hidden" value="41" id="store_shop_id" />
 					</dl>
 					<dl class="store-score">
@@ -895,7 +895,7 @@ $(function() {
 					</dl>
 					<div class="enter-store">
 						<div class="enter-store-item">
-							<a class="bg-color goto-shop" href="http://jayhui.cn/shop/shopindex?shop_id=41" target="_blank"><i></i> 进入店铺</a>
+							<a class="bg-color goto-shop" href="http://tp.23673.com/shop/shopindex?shop_id=41" target="_blank"><i></i> 进入店铺</a>
 							<a class="bg-color shop-add collect-shop" href="javascript:;"><i></i>
 								<span>
 									收藏本店
@@ -916,7 +916,7 @@ $(".collect-shop").click(function(event) {
 		{	
 			//没有收藏，我要收藏
 			$.ajax({
-				url: "http://jayhui.cn/components/collectiongoodsorshop",
+				url: "http://tp.23673.com/components/collectiongoodsorshop",
 				type: "post",
 				data: { "fav_id":41,"fav_type":"shop","log_msg":""},
 				success: function (data) {
@@ -929,7 +929,7 @@ $(".collect-shop").click(function(event) {
 			});
 		}else{
 			$.ajax({
-				url: "http://jayhui.cn/components/cancelcollgoodsorshop",
+				url: "http://tp.23673.com/components/cancelcollgoodsorshop",
 				type: "post",
 				data: { "fav_id":41,"fav_type":"shop"},
 				success: function (data) {
@@ -942,7 +942,7 @@ $(".collect-shop").click(function(event) {
 			});
 		}
 	}else{
-		location.href = "http://jayhui.cn/login/index";
+		location.href = "http://tp.23673.com/login/index";
 	}
 });
 </script>
@@ -995,34 +995,34 @@ $(".collect-shop").click(function(event) {
 									<ul class="goods-list" style="display: block">
 										<li class="goods-item first">
 											<div class="picture">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=383" title="单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42">
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=383" title="单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42">
 													<img src="../../static/picture/1500601152702_4.jpg" />
 												</a>
 											</div>
 											<div class="price">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=383" title="单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42">单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42</a>
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=383" title="单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42">单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42</a>
 												<span class="money-color">￥345.00</span>
 											</div>
 										</li>
 										<li class="goods-item first">
 											<div class="picture">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=385" title="春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子">
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=385" title="春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子">
 													<img src="../../static/picture/1500601381802.jpg" />
 												</a>
 											</div>
 											<div class="price">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=385" title="春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子">春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子</a>
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=385" title="春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子">春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子</a>
 												<span class="money-color">￥269.00</span>
 											</div>
 										</li>
 										<li class="goods-item first">
 											<div class="picture">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=384" title="【葡萄妈】studiolee 小方跟方扣单鞋4.5cm 附赠贴底">
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=384" title="【葡萄妈】studiolee 小方跟方扣单鞋4.5cm 附赠贴底">
 													<img src="../../static/picture/1500601296742_1.jpg" />
 												</a>
 											</div>
 											<div class="price">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=384" title="【葡萄妈】studiolee 小方跟方扣单鞋4.5cm 附赠贴底">【葡萄妈】studiolee
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=384" title="【葡萄妈】studiolee 小方跟方扣单鞋4.5cm 附赠贴底">【葡萄妈】studiolee
 													小方跟方扣单鞋4.5cm 附赠贴底</a>
 												<span class="money-color">￥269.00</span>
 											</div>
@@ -1031,35 +1031,35 @@ $(".collect-shop").click(function(event) {
 									<ul class="goods-list">
 										<li class="goods-item first">
 											<div class="picture">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=383" title="单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42">
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=383" title="单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42">
 													<img src="../../static/picture/1500601152702_4.jpg" />
 												</a>
 											</div>
 											<div class="price">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=383" title="单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42">单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42</a>
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=383" title="单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42">单鞋细高跟防水台鱼嘴女凉鞋2017春夏季新款复古刺绣高跟鞋40-42</a>
 												<span class="money-color">￥345.00</span>
 											</div>
 										</li>
 										<li class="goods-item first">
 											<div class="picture">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=384" title="【葡萄妈】studiolee 小方跟方扣单鞋4.5cm 附赠贴底">
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=384" title="【葡萄妈】studiolee 小方跟方扣单鞋4.5cm 附赠贴底">
 													<img src="../../static/picture/1500601296742_1.jpg" />
 												</a>
 											</div>
 											<div class="price">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=384" title="【葡萄妈】studiolee 小方跟方扣单鞋4.5cm 附赠贴底">【葡萄妈】studiolee
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=384" title="【葡萄妈】studiolee 小方跟方扣单鞋4.5cm 附赠贴底">【葡萄妈】studiolee
 													小方跟方扣单鞋4.5cm 附赠贴底</a>
 												<span class="money-color">￥269.00</span>
 											</div>
 										</li>
 										<li class="goods-item first">
 											<div class="picture">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=385" title="春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子">
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=385" title="春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子">
 													<img src="../../static/picture/1500601381802.jpg" />
 												</a>
 											</div>
 											<div class="price">
-												<a href="http://jayhui.cn/goods/goodsinfo?goodsid=385" title="春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子">春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子</a>
+												<a href="http://tp.23673.com/goods/goodsinfo?goodsid=385" title="春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子">春季包头中粗跟尖头浅口单鞋女夏2017新款百搭韩版侧空低跟单鞋子</a>
 												<span class="money-color">￥269.00</span>
 											</div>
 										</li>
@@ -1420,7 +1420,7 @@ $(".collect-shop").click(function(event) {
 									var goods_id = $('#hidden_goodsid').val(); //标签在info页面
 									$.ajax({
 										type: "post",
-										url: "http://jayhui.cn/goods/getgoodscomments",
+										url: "http://tp.23673.com/goods/getgoodscomments",
 										data: {
 											'page_index': pageindex,
 											'page_size': page_size,
@@ -1532,7 +1532,7 @@ $(".collect-shop").click(function(event) {
 													<p></p>
 												</div>
 												<div class="ncs-cosult-askbtn">
-													<a href="http://jayhui.cn/goods/goodsconsult?goodsid=383#askQuestion" target="_blank" class="btn btn-white">
+													<a href="http://tp.23673.com/goods/goodsconsult?goodsid=383#askQuestion" target="_blank" class="btn btn-white">
 														我要咨询</a>
 												</div>
 											</div>
@@ -1611,7 +1611,7 @@ $(".collect-shop").click(function(event) {
 		<script type="text/javascript" src="../../static/js/tabs_1.js"></script>
 		<script type="text/javascript" src="../../static/js/goods.js"></script>
 		<script type="text/javascript">
-			var shop_main = "http://jayhui.cn";
+			var shop_main = "http://tp.23673.com";
 			$().ready(function() {
 				initSku(); //加载sku
 				//判断是否有总库存
@@ -1777,7 +1777,7 @@ $(".collect-shop").click(function(event) {
 					if (is_member_fav_goods == 0) {
 						//点击收藏
 						$.ajax({
-							url: "http://jayhui.cn/components/collectiongoodsorshop",
+							url: "http://tp.23673.com/components/collectiongoodsorshop",
 							type: "post",
 							data: {
 								"fav_id": 383,
@@ -1799,7 +1799,7 @@ $(".collect-shop").click(function(event) {
 					} else if (is_member_fav_goods == 1) {
 						//取消收藏
 						$.ajax({
-							url: "http://jayhui.cn/components/cancelcollgoodsorShop",
+							url: "http://tp.23673.com/components/cancelcollgoodsorShop",
 							type: "post",
 							data: {
 								"fav_id": 383,
@@ -1819,7 +1819,7 @@ $(".collect-shop").click(function(event) {
 							}
 						});
 					} else {
-						location.href = "http://jayhui.cn/login/index";
+						location.href = "http://tp.23673.com/login/index";
 					}
 				});
 
@@ -1834,7 +1834,7 @@ $(".collect-shop").click(function(event) {
 						return;
 					}
 					$.ajax({
-						url: "http://jayhui.cn/goods/getexpressfee",
+						url: "http://tp.23673.com/goods/getexpressfee",
 						type: "post",
 						data: {
 							"goods_id": $("#hidden_goodsid").val(),
@@ -1925,40 +1925,40 @@ $(".collect-shop").click(function(event) {
 						<div class="help-item">
 							<h3>新手上路</h3>
 							<ul>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=18" title="售后流程" target="_blank">有问题请找我</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=8" title="售后流程" target="_blank">配送支付智能查询</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=18" title="售后流程" target="_blank">有问题请找我</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=8" title="售后流程" target="_blank">配送支付智能查询</a></li>
 							</ul>
 						</div>
 						<div class="help-item">
 							<h3>配送与支付</h3>
 							<ul>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=7" title="售后流程" target="_blank">货到付款区域</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=2" title="售后流程" target="_blank">支付方式说明</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=7" title="售后流程" target="_blank">货到付款区域</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=2" title="售后流程" target="_blank">支付方式说明</a></li>
 							</ul>
 						</div>
 						<div class="help-item">
 							<h3>会员中心</h3>
 							<ul>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=3" title="售后流程" target="_blank">售后流程</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=5" title="售后流程" target="_blank">资金管理</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=6" title="售后流程" target="_blank">我的收藏</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=14" title="售后流程" target="_blank">我的订单</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=3" title="售后流程" target="_blank">售后流程</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=5" title="售后流程" target="_blank">资金管理</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=6" title="售后流程" target="_blank">我的收藏</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=14" title="售后流程" target="_blank">我的订单</a></li>
 							</ul>
 						</div>
 						<div class="help-item">
 							<h3>服务保证</h3>
 							<ul>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=9" title="售后流程" target="_blank">退换货原则</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=10" title="售后流程" target="_blank">售后服务保证</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=11" title="售后流程" target="_blank">产品质量保证</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=9" title="售后流程" target="_blank">退换货原则</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=10" title="售后流程" target="_blank">售后服务保证</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=11" title="售后流程" target="_blank">产品质量保证</a></li>
 							</ul>
 						</div>
 						<div class="help-item">
 							<h3>联系我们</h3>
 							<ul>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=12" title="售后流程" target="_blank">网站故障报告</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=15" title="售后流程" target="_blank">选机咨询</a></li>
-								<li><a href="http://jayhui.cn/helpcenter/index?id=16" title="售后流程" target="_blank">投诉与建议</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=12" title="售后流程" target="_blank">网站故障报告</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=15" title="售后流程" target="_blank">选机咨询</a></li>
+								<li><a href="http://tp.23673.com/helpcenter/index?id=16" title="售后流程" target="_blank">投诉与建议</a></li>
 							</ul>
 						</div>
 					</div>

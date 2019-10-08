@@ -11,6 +11,7 @@ class GoodsLogic
         $categoryList = Db::name("category")->where($where)->select();
         return $categoryList;
     }
+
     //添加商品
     public function addGoods($product)
     {

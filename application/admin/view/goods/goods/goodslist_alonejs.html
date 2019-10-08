@@ -58,8 +58,8 @@
 						html += '<span  class="div-flag-style" style="display: inline-block;margin:0 20px 0 40px;position:relative"> <i class="icon-qrcode"style="background: none; color: #555; font-size: 20px; margin-right: 0;"></i>';
 						html += '<div class="QRcode" style="display: none; position: absolute;width:110px;top:28px;left:15px"id="qrcode"><p><img src="/'+ data["data"][i]["QRcode"]+'" style="width:110px;"></p></div></span>';
 						html += '</span></div></td></tr>';
-						html += '<tr><td colspan="2" style="background: white;"><div><a class="a-pro-view-img" href="http://jayhui.cn/goods/goodsinfo?goodsid='+data["data"][i]["goods_id"]+'" target="_blank"><img class="thumbnail-img"src="'+data["data"][i]["pic_addr"]+'">';
-						html += '<div class="div-pro-view-name"><span style="color: #13A5D5;" class="thumbnail-name title='+ data["data"][i]["goods_name"]+'"><a target="_blank" style="word-break:break-all;" href="http://jayhui.cn/goods/goodsinfo?goodsid='+data["data"][i]["goods_id"]+'">'
+						html += '<tr><td colspan="2" style="background: white;"><div><a class="a-pro-view-img" href="http://tp.23673.com/goods/goodsinfo?goodsid='+data["data"][i]["goods_id"]+'" target="_blank"><img class="thumbnail-img"src="'+data["data"][i]["pic_addr"]+'">';
+						html += '<div class="div-pro-view-name"><span style="color: #13A5D5;" class="thumbnail-name title='+ data["data"][i]["goods_name"]+'"><a target="_blank" style="word-break:break-all;" href="http://tp.23673.com/goods/goodsinfo?goodsid='+data["data"][i]["goods_id"]+'">'
 							+ data["data"][i]["goods_name"]
 							+ '</a></span><br/>';
 						//html += '<div class="div-flag-style"><span class="" title=""><i class="icon-tablet"style="background: none; color: #555; font-size: 20px; margin-right: 0;"></i></span><span onmouseover="mouseover(this)" onmouseout="mouseout(this)"style="display: inline-block;"> <i class="icon-qrcode"style="background: none; color: #555; font-size: 20px; margin-right: 0;"></i></span>';
@@ -211,7 +211,7 @@
 		}
 		$.ajax({
 			type : "post",
-			url : "http://jayhui.cn/admin/Goods/"+url,
+			url : "http://tp.23673.com/admin/Goods/"+url,
 			data : {
 				"goods_ids" : goods_ids
 			},
@@ -261,7 +261,7 @@
 				"确定": function() {
 					$.ajax({
 						type : "post",
-						url : "http://jayhui.cn/admin/goods/deletegoods",
+						url : "http://tp.23673.com/admin/goods/deletegoods",
 						data : {
 							"goods_ids" : goods_ids.toString()
 						},
@@ -345,7 +345,7 @@
 		goods_type = goods_type.substring(0, goods_type.length - 1);
 		$.ajax({
 			type : "post",
-			url : "http://jayhui.cn/admin/goods/modifygoodsgroup",
+			url : "http://tp.23673.com/admin/goods/modifygoodsgroup",
 			data : {
 				"goods_id" : goods_ids,
 				"goods_type" : goods_type
@@ -420,7 +420,7 @@
 		recommend_type = recommend_type.substring(0, recommend_type.length - 1);
 		$.ajax({
 			type : "post",
-			url : "http://jayhui.cn/admin/goods/modifygoodsrecommend",
+			url : "http://tp.23673.com/admin/goods/modifygoodsrecommend",
 			data : {
 				"goods_id" : goods_ids,
 				"recommend_type" : recommend_type
@@ -479,7 +479,7 @@
 		$("#category_id_3").val('');
 		$.ajax({
 			type : 'post',
-			url : "http://jayhui.cn/admin/goods/getcategorybyparentajax",
+			url : "http://tp.23673.com/admin/goods/getcategorybyparentajax",
 			data : {"parentId":parentId},
 			success : function(data){
 				
@@ -518,7 +518,7 @@
 		$("#category_id_3").val('');
 		$.ajax({
 			type : 'post',
-			url : "http://jayhui.cn/admin/goods/getcategorybyparentajax",
+			url : "http://tp.23673.com/admin/goods/getcategorybyparentajax",
 			data : {"parentId":parentId},
 			success : function(data){
 				if(data.length>0){
@@ -571,7 +571,7 @@
 				"确定": function() {
 					$.ajax({
 						type : "post",
-						url : "http://jayhui.cn/admin/goods/copygoods",
+						url : "http://tp.23673.com/admin/goods/copygoods",
 						data : {"goods_id":goods_id},
 						dataType : "json",
 						success : function(data) {
@@ -609,7 +609,7 @@
 		var goods_id = $(event).attr("goods_id");
 		$.ajax({
 			type : "post",
-			url : "http://jayhui.cn/admin/goods/updateGoodsSortAjax",
+			url : "http://tp.23673.com/admin/goods/updateGoodsSortAjax",
 			data : {
 				"sort" : sort,
 				"goods_id" : goods_id
@@ -635,23 +635,25 @@
 			}
 		});
 		if(goods_ids.length == 0){
-			showMessage("error", "请至少选择一件商品");
+			showMessage("error", "更新至少选择一件商品");
 			return false;
 		}
-		$.ajax({
-			type : "post",
-			url : "http://www.jayhui.cn/admin/goods/updateGoodsQrcode",
-			data : {
-				"goods_id" : goods_ids,
-			},
-			success : function(data){
-				if (data["code"] > 0) {
-					showMessage('success', '二维码更新成功');
-					LoadingInfo(1);
-				}else{
-					showMessage('error', data['message']);
-				}	
-			}
-		})
+		else {
+            $.ajax({
+                type: "post",
+                url: "http://www.jayhui.cn/admin/goods/updateGoodsQrcode",
+                data: {
+                    "goods_id": goods_ids,
+                },
+                success: function (data) {
+                    if (data["code"] > 0) {
+                        showMessage('success', '二维码更新成功');
+                        LoadingInfo(1);
+                    } else {
+                        showMessage('error', data['message']);
+                    }
+                }
+            });
+        }
 	}
 </script>

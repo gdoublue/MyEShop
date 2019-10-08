@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>六星商城 | 后台登陆</title>
+  <title>商城测试版 | 后台登陆</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.4 -->
@@ -12,7 +12,9 @@
   <!-- Theme style -->
   <link href="/static/css/adminlte.min.css" rel="stylesheet" type="text/css" />
   <!-- iCheck -->
-  <link href="/static/css/blue.css" rel="stylesheet" type="text/css" /><link href="https://cdn.bootcss.com/layer/2.3/skin/layer.css" rel="stylesheet">
+  <link href="/static/css/blue.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/static/css/layer_13.css" >
+
   <style>
     #imgVerify {
       width: 120px;
@@ -43,7 +45,7 @@
 <body class="login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>六星商城系统</b></a>
+      <a href="http://www.jayhui.cn" class="logo"><img alt="logo" src="/logo.png" /></a>
     </div>
     <div class="login-box-body">
       <p class="login-box-msg">后台管理</p>
@@ -130,7 +132,7 @@
         layer.alert('验证码错误', {
           icon: 2
         });
-        //fleshVerify();
+       fleshVerify();
         return;
       }
 

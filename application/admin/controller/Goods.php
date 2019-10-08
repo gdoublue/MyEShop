@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 
-use think\Controller;
+use  app\admin\controller\Adminbase;
 use app\admin\logic\GoodsLogic;
 use Request;
 use app\admin\model\Picture;
@@ -15,7 +15,7 @@ use Endroid\QrCode\Response\QrCodeResponse;
 /*//定义商品类
 
 */
-class Goods extends Controller
+class Goods extends Adminbase
 {
     //goodlist
     public function  goodsList()

@@ -35,13 +35,13 @@
         }
     </style>
     <script type="text/javascript">
-        var shop_main='http://jayhui.cn';//外置JS调用
+        var shop_main='http://tp.23673.com';//外置JS调用
     </script>
     <!--整站改色 _end-->
     <script type="text/javascript" src="/static/js/jquery.js"></script>
     <script type="text/javascript" src="/static/js/login.js"></script>
     <script type="text/javascript" src="/static/js/layer.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.method.js"></script>
+<!--    <script type="text/javascript" src="/static/js/jquery.method.js"></script>-->
     <script type="text/javascript" src="/static/js/common.js"></script>
     <!-- <script type="text/javascript" src="/static/js/messages_zh.js"></script> -->
     <script type="text/javascript" src="/static/js/register.js"></script>
@@ -74,10 +74,59 @@
                 });
             }
         });
-        $("#btn_submit").click(function(){
+        $("#yzm_button").click(function(){
+            sendyzm($("#yzm_button"));
+        });
+        //用ajax提交到后台的发送短信接口
+        function sendyzm(obj) {
+            var tmess = $("#tmess").val();
+            if(/^1(3|4|5|7|8)\d{9}$/.test(tmess) ){
+                $('#tmess').css("border","1px solid #ccc");
+                $.ajax({
+                    type: "get",
+                    url: "http://www.jayhui.cn/home/register/smsyzm",
+                    data: { "phone" : tmess },
+                    success: function(data){
+                        if(data.smsready){
+                            $("#yzmtip").css("color","green").text("已发送至 "+ data.num +" 请查看");
+                            setTime(obj);//开始倒计时
+                        }
+
+                    }
+                });
+            }else {
+                $("#tmess").trigger("focus");
+                $('#tmess').css("border","1px solid red");
+                $("#yzmtip").css("color","red").text("请输入正确的手机号");
+                return false;
+            }
+        }
+        //60s倒计时实现逻辑
+        var countdown = 60;
+        function setTime(obj)
+        {
+            if (countdown == 0) {
+                obj.prop('disabled', false);
+                obj.text("点击获取验证码");
+                countdown = 60;//60秒过后button上的文字初始化,计时器初始化;
+                return;
+            } else {
+                obj.prop('disabled', true);
+                obj.text("(" + countdown + "s)后重新发送");
+                countdown--;
+            }
+            setTimeout(function () {
+                setTime(obj)
+            }, 1000) ;//每1000毫秒执行一次
+        }
+
+
+            $("#btn_submit").click(function(){
             var username = $("#mobileregistermodel-username").val();
             var password = $("#password").val();
             var repass = $("#repass").val();
+             var phone=  $("#tmess").val();
+			var smscode = $("#smscode").val();
             var isset_username = $("#isset_username").attr("value");
             var re =  /^(?!\d+$)[\da-zA-Z]*$/i;
             if(!(username.length >= 3 && username.length <=16)){
@@ -121,12 +170,24 @@
                 $('#repass').css("border","1px solid #ccc");
                 $("#qrrepass").css("color","red").text("");
             }
+            var is_sms = verifysmscode(smscode);
+            if(!is_sms) {
+                $("#smscode").trigger("focus");
+                $("#smscode").css("border","1px solid red");
+                $("#smscodetip").css("color","red").text("验证码错误");
+                return false;
+            }else{
+                $('#smscode').css("border","1px solid #ccc");
+                $("#smscodetip").css("color","red").text("");
+            }
+
             if(!$("#remember1").prop("checked")){
                 $("#yzremember").css("color","red").text("您还没有同意注册协议");
                 return false;
             }else{
                 $("#yzremember").css("color","red").text("");
             }
+			
 
             $("#EmailRegisterModel").submit();
         });
@@ -135,7 +196,7 @@
 </script>
 <div class="header w990">
     <div class="logo-info">
-        <a href="http://jayhui.cn" class="logo"><img alt="logo" src="/1497923663.jpg" /></a>
+        <a href="http://www.jayhui.cn" class="logo"><img alt="logo" src="/logo.png" /></a>
     </div>
 </div>
 <div class="reg-content">
@@ -302,11 +363,25 @@
                         }
                         return is_true;
                     }
-
+                    function verifysmscode(smscode) {
+                        var is_true = 1;
+                        $.ajax({
+                            type: "get",
+                            url: "http://www.jayhui.cn/home/register/smsverify",
+                            data: { "smscode" : smscode },
+                            success: function(data){        //返回code为1，验证码才有效
+                                if(data.code){
+                                is_true=0;
+                                return is_true;
+                                }
+                            }
+                        });
+                        return is_true;
+                    }
                 </script>
                 <div class="reg-type">
                     <p class="login-info">
-                        我已经注册，现在就<a href="http://jayhui.cn/login/index" title="去登录" class="color">&nbsp;登录</a>
+                        我已经注册，现在就<a href="http://www.jayhui.cn/home/login/login" title="去登录" class="color">&nbsp;登录</a>
                     </p>
                     <ul class="clearfix">
                         <li class="active" ><a href="javascript:void(0);">普通注册</a></li>
@@ -314,7 +389,7 @@
                     </ul>
                 </div>
                 <div class="reg-wrap">
-                    <div class="reg-wrap-con" style="background: url(/static/images/register_bg_image.png) no-repeat right 70px;">
+                    <div class="reg-wrap-con" style=" no-repeat right 70px;">
                         <form id="EmailRegisterModel" class="form-horizontal" name="EmailRegisterModel" action="" method="post">
                             <input type="hidden" name="_csrf" value="Q2dXM2NPVXYbFDZYMT0TNycsLkklHQ1HAQsGAA5/OjAaHxtUG3s7Dg==">
                             <!-- 用户名 -->
@@ -358,12 +433,35 @@
                                 </div>
                                 <div class="invalid"></div>
                             </div>
+                            <!--  发送手机验证码-->
+                            <div class="form-group form-group-spe">
+                                <label for="mobileregistermodel-mobile" class="input-left">
+                                    <span class="spark">*</span>
+                                    <span>手机号码：</span>
+                                </label>
+                                <div class="form-control-box">
+                                    <input type="text" id="tmess" class="form-control" name="tmess" autocomplete="off" placeholder="请输入接收验证码手机号">
+                                    <span><button type="button" name=yzmcheck id=yzm_button class=yzmclass  style="margin-left: 0px;width:80px;height:30px;"/>发送验证码</button></span><span id="yzmtip"></span>
+                                </div>
+                            </div>
+                            <!--  输入手机验证码-->
+                            <div class="form-group form-group-spe">
+                                <label for="mobileregistermodel-mobile" class="input-left">
+                                    <span class="spark">*</span>
+                                    <span>输入验证码：</span>
+                                </label>
+                                <div class="form-control-box">
+                                    <input type="text" id="smscode" class="form-control" name="smscode" autocomplete="off" placeholder="请输入验证码">
+                                   <span id="smscodetip"></span>
+                                </div>
+                            </div>
+
                             <div class="form-group m-10">
                                 <label class="input-left">&nbsp;</label>
                                 <div class="form-control-box">
                                     <label for="remember1">
                                         <input type="checkbox"  name="remember" id="remember1" class="checkbox  m-b-6"/>
-                                        <span>我已阅读并同意<a href="http://jayhui.cn/helpcenter/index?id=17&class_id=6" class="user_protocol" target="_blank">《用户注册协议》</a></span>
+                                        <span>我已阅读并同意<a href="http://tp.23673.com/helpcenter/index?id=17&class_id=6" class="user_protocol" target="_blank">《用户注册协议》</a></span>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <span id="yzremember"></span>
                                     </label>
