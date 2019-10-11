@@ -74,11 +74,11 @@ class Register extends Controller
            $phone = Request::param("phone");
 
 
-            $options['accountsid']='d5bcb68d6fba35e0232927d20ab78660';
-            $options['token']='9ff778bb56fc2eafc193d49aba3343fb';
+            $options['accountsid']='*';
+            $options['token']='*';
             $ucpaas = new Ucpaas($options);
-            $appid = "243e663b623e44e698583601b05c6638";	//应用的ID，可在开发者控制台内的短信产品下查看
-            $templateid = "503193";    //可在后台短信产品→选择接入的应用→短信模板-模板ID，查看该模板ID
+            $appid = "*";	//应用的ID，可在开发者控制台内的短信产品下查看
+            $templateid = "*";    //可在后台短信产品→选择接入的应用→短信模板-模板ID，查看该模板ID
             $yzmcode=mt_rand(1001,9899);
             $param = "$yzmcode,300"; //多个参数使用英文逗号隔开（如：param=“a,b,c”），如为参数则留空
             $mobile = $phone;
